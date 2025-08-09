@@ -280,3 +280,10 @@ body {
 .social-link:hover {
   color: #000;
 }
+
+/* Mobile gutters for gallery thumbnails */
+@media (max-width: 640px) {
+  .gallery {
+    padding: 0 1rem;
+  }
+}
