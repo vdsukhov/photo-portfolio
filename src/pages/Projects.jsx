@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const projects = [
   {
-    slug: 'nature',
-    title: 'Nature Escapes',
-    description: 'Exploring the serenity of the wild.',
-    cover: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80'
+    slug: 'vogue',
+    title: 'Vogue',
+    description: 'My works from PhotoVogue.',
+    cover: 'https://images.vogue.it/Photovogue/d70af2c0-1937-11f0-9d51-e57de264298b_gallery.jpg?auto=format&fit=crop&w=800&q=80'
   },
   {
     slug: 'urban',

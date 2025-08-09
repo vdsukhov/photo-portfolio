@@ -3,13 +3,12 @@ import { useParams } from 'react-router-dom';
 import Gallery from '../components/Gallery.jsx';
 
 const projectData = {
-  nature: {
-    title: 'Nature Escapes',
+  vogue: {
+    title: 'Vogue',
     images: [
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1501769214405-0c3b74f4d7ba?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80'
+      'https://images.vogue.it/Photovogue/277be7a0-1938-11f0-8b68-e727f1c30dc4_gallery.jpg?auto=format&fit=crop&w=1200&q=80',
+      'https://images.vogue.it/Photovogue/d70af2c0-1937-11f0-9d51-e57de264298b_gallery.jpg?auto=format&fit=crop&w=1200&q=80',
+      'https://images.vogue.it/Photovogue/3ae0fa00-0e3a-11f0-b9f0-0b888f34ccb3_gallery.jpg?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   urban: {
