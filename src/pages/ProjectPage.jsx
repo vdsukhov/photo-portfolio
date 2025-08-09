@@ -20,27 +20,6 @@ const projectData = {
       }
     ]
   },
-  urban: {
-    title: 'Urban Stories',
-    images: [
-      {
-        thumb: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=70',
-        full: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&w=1800&q=85'
-      },
-      {
-        thumb: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=70',
-        full: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&w=1800&q=85'
-      },
-      {
-        thumb: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=600&q=70',
-        full: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&w=1800&q=85'
-      },
-      {
-        thumb: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=70',
-        full: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&w=1800&q=85'
-      }
-    ]
-  }
 };
 
 export default function ProjectPage() {
