@@ -303,8 +303,6 @@ body {
 /* Mobile: make paddings consistent between bio and selected, and avoid double padding on gallery */
 @media (max-width: 640px) {
   .bio { padding: 1rem; }
-  .selected { padding: 1rem; }
-  .selected .gallery { padding: 0; }
 }
 
 /* Smaller tiles for Selected Works on mobile */
