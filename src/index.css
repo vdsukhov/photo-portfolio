@@ -44,13 +44,20 @@ body {
   object-fit: cover;
 }
 
+.genres {
+  padding: 0.5rem 0;          /* space around the whole badges block */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;                 /* consistent space between badges */
+}
+
 .genres .badge {
   display: inline-block;
   background: #f0f0f0;
   color: #555;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
-  margin-right: 0.5rem;
+  margin-right: 0;
   font-size: 0.8rem;
 }
 
@@ -279,6 +286,17 @@ body {
 
 .social-link:hover {
   color: #000;
+}
+
+/* Smaller tiles for Selected Works on mobile */
+@media (max-width: 640px) {
+  .selected .gallery-grid {
+    column-width: clamp(40px, 20vw, 200px);
+    column-gap: 0.45rem;
+  }
+  .selected .gallery-tile {
+    max-width: 500px;
+  }
 }
 
 /* Mobile gutters for gallery thumbnails */
