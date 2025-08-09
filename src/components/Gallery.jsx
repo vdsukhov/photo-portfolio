@@ -4,6 +4,17 @@ export default function Gallery({ images }) {
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
+  const getThumb = (item) =>
+    typeof item === 'string' ? item : (item.thumb || item.src || item.full);
+  const getThumbSrcSet = (item) =>
+    typeof item === 'object' ? item.thumbSrcSet : undefined;
+  const getThumbSizes = (item) =>
+    typeof item === 'object' ? item.sizes : undefined;
+  const getFull = (item) =>
+    typeof item === 'string' ? item : (item.full || item.src || item.thumb);
+  const getAlt = (item, i) =>
+    typeof item === 'object' && item?.alt ? item.alt : `image ${i + 1}`;
+
   const open = (index) => {
     setCurrent(index);
     setIsOpen(true);
@@ -31,11 +42,41 @@ export default function Gallery({ images }) {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen]);
 
+  // Preload adjacent images in lightbox for faster nav
+  useEffect(() => {
+    if (!isOpen || !images?.length) return;
+    const preloadIndexes = [
+      (current + 1) % images.length,
+      (current - 1 + images.length) % images.length,
+    ];
+    preloadIndexes.forEach((idx) => {
+      const src = getFull(images[idx]);
+      if (src) {
+        const img = new Image();
+        img.src = src;
+      }
+    });
+  }, [isOpen, current, images]);
+
+  const currentItem = images[current];
+  const fullSrc = isOpen ? getFull(currentItem) : null;
+
   return (
     <div className="gallery">
       <div className="gallery-grid">
-        {images.map((img, i) => (
-          <img key={i} src={img} alt={`image ${i + 1}`} onClick={() => open(i)} />
+        {images.map((item, i) => (
+          <div className="gallery-tile" key={i}>
+            <img
+              src={getThumb(item)}
+              srcSet={getThumbSrcSet(item)}
+              sizes={getThumbSizes(item)}
+              alt={getAlt(item, i)}
+              onClick={() => open(i)}
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            />
+          </div>
         ))}
       </div>
       {isOpen && (
@@ -47,7 +88,7 @@ export default function Gallery({ images }) {
           tabIndex={-1}
         >
           <button className="close" onClick={() => setIsOpen(false)}>&times;</button>
-          <img src={images[current]} alt="expanded" />
+          <img src={fullSrc} alt={getAlt(currentItem, current)} />
           <button className="prev" onClick={prev}>&#10094;</button>
           <button className="next" onClick={next}>&#10095;</button>
         </div>

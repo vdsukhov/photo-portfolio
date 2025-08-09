@@ -6,18 +6,39 @@ const projectData = {
   vogue: {
     title: 'Vogue',
     images: [
-      'https://images.vogue.it/Photovogue/277be7a0-1938-11f0-8b68-e727f1c30dc4_gallery.jpg?auto=format&fit=crop&w=1200&q=80',
-      'https://images.vogue.it/Photovogue/d70af2c0-1937-11f0-9d51-e57de264298b_gallery.jpg?auto=format&fit=crop&w=1200&q=80',
-      'https://images.vogue.it/Photovogue/3ae0fa00-0e3a-11f0-b9f0-0b888f34ccb3_gallery.jpg?auto=format&fit=crop&w=1200&q=80'
+      {
+        thumb: 'https://images.vogue.it/Photovogue/277be7a0-1938-11f0-8b68-e727f1c30dc4_gallery.jpg?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.vogue.it/Photovogue/277be7a0-1938-11f0-8b68-e727f1c30dc4_gallery.jpg?auto=format&w=1800&q=85'
+      },
+      {
+        thumb: 'https://images.vogue.it/Photovogue/d70af2c0-1937-11f0-9d51-e57de264298b_gallery.jpg?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.vogue.it/Photovogue/d70af2c0-1937-11f0-9d51-e57de264298b_gallery.jpg?auto=format&w=1800&q=85'
+      },
+      {
+        thumb: 'https://images.vogue.it/Photovogue/3ae0fa00-0e3a-11f0-b9f0-0b888f34ccb3_gallery.jpg?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.vogue.it/Photovogue/3ae0fa00-0e3a-11f0-b9f0-0b888f34ccb3_gallery.jpg?auto=format&w=1800&q=85'
+      }
     ]
   },
   urban: {
     title: 'Urban Stories',
     images: [
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80'
+      {
+        thumb: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&w=1800&q=85'
+      },
+      {
+        thumb: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&w=1800&q=85'
+      },
+      {
+        thumb: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&w=1800&q=85'
+      },
+      {
+        thumb: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=70',
+        full: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&w=1800&q=85'
+      }
     ]
   }
 };
