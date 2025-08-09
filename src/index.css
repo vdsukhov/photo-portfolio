@@ -58,6 +58,10 @@ body {
   padding: 2rem;
 }
 
+.selected h2 {
+  text-align: center;
+}
+
 .selected .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -138,6 +142,9 @@ body {
   break-inside: avoid;
   margin-bottom: 1rem;
   max-width: 460px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .gallery {
@@ -154,6 +161,27 @@ body {
   height: auto;
   display: block;
   border-radius: 4px;
+  cursor: zoom-in;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.gallery-tile:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+.gallery-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.gallery-tile:hover::after {
+  opacity: 1;
 }
 
 .lightbox {

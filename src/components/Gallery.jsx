@@ -42,6 +42,13 @@ export default function Gallery({ images }) {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen]);
 
+  // Close when clicking on the overlay (outside image and controls)
+  const onOverlayClick = (e) => {
+    if (e.currentTarget === e.target) {
+      setIsOpen(false);
+    }
+  };
+
   // Preload adjacent images in lightbox for faster nav
   useEffect(() => {
     if (!isOpen || !images?.length) return;
@@ -86,11 +93,12 @@ export default function Gallery({ images }) {
           aria-modal="true"
           aria-label="Image viewer lightbox"
           tabIndex={-1}
+          onClick={onOverlayClick}
         >
-          <button className="close" onClick={() => setIsOpen(false)}>&times;</button>
+          <button className="close" onClick={() => setIsOpen(false)} aria-label="Close viewer">&times;</button>
           <img src={fullSrc} alt={getAlt(currentItem, current)} />
-          <button className="prev" onClick={prev}>&#10094;</button>
-          <button className="next" onClick={next}>&#10095;</button>
+          <button className="prev" onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous image">&#10094;</button>
+          <button className="next" onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next image">&#10095;</button>
         </div>
       )}
     </div>
