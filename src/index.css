@@ -288,6 +288,25 @@ body {
   color: #000;
 }
 
+/* Align Home sections to the same left edge */
+.bio, .selected {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Left-align the gallery inside Selected Works so its left edge defines alignment */
+.selected .gallery {
+  justify-content: flex-start;
+}
+
+/* Mobile: make paddings consistent between bio and selected, and avoid double padding on gallery */
+@media (max-width: 640px) {
+  .bio { padding: 1rem; }
+  .selected { padding: 1rem; }
+  .selected .gallery { padding: 0; }
+}
+
 /* Smaller tiles for Selected Works on mobile */
 @media (max-width: 640px) {
   .selected .gallery-grid {
