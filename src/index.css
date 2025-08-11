@@ -322,3 +322,8 @@ body {
     padding: 0 1rem;
   }
 }
+
+/* Bottom spacing for project galleries (ProjectPage) */
+.gallery-title + .gallery {
+  margin-bottom: 2rem;
+}
